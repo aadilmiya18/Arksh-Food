@@ -1,11 +1,545 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    hhaa
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-gray-100 flex flex-col w-[1200px] mx-auto">
+    <header>
+      <nav>
+        <div class="flex items-center h-[130px] relative top-4">
+          <div
+            class="h-[100px] w-[100px] sm:w-[530px]  bg-white absolute left-4 flex items-center justify-evenly sm:flex-row flex-col sm:space-x-4"
+          >
+            <div>
+              <img
+                src="https://img.drz.lazcdn.com/g/kf/S49bd04e2f8bb44688cb7d940998a8b37S.jpg_80x80q90.jpg_.webp"
+                alt="logo "
+                class="w-[50px] h-[50px]"
+              />
+            </div>
+            <div>
+              <div>
+                <p class="font-bold font-roboto sm:text-left">Arksh Food</p>
+              </div>
+              <div>
+                <div class="h-25px flex items-center justify-center sm:justify-start space-x-3">
+                  <img
+                    src="https://img.alicdn.com/imgextra/i2/O1CN010a9TPg1PvA3DLiKnS_!!6000000001902-2-tps-300-42.png"
+                    alt="img"
+                    class="h-[15px] w-[107px]"
+                  />
+                  <span class="text-[12px] text-[rgb(117,117,117)]">|</span>
+                  <span class="text-[12px] text-[rgb(117,117,117)]"
+                    >2834 Followers</span
+                  >
+                </div>
+              </div>
+              <div>
+                <span class="text-[14px] text-[rgb(117,117,117)]"
+                  >91% Positive seller ratings</span
+                >
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center text-[rgb(0,62,82)] cursor-pointer hover:bg-blue-100"
+            >
+              <i class="fa-solid fa-comment text-[24px] mb-1"></i>
+              <span>Chat Now</span>
+            </div>
+            <div
+              class="flex flex-col items-center text-[rgb(255,80,0)] cursor-pointer hover:bg-red-100"
+            >
+              <i class="fa-solid fa-store text-[24px] mb-1">+</i>
+              <span>FOLLOW</span>
+            </div>
+          </div>
+          <img src="/images/navbanner.jpg" alt="navbanner" />
+        </div>
+      </nav>
+      <!-- tab section -->
+      <div
+        class="h-[50px] w-full flex items-center justify-between p-4 border border-gray-300 bg-white relative mt-8 text-[rgb(51,51,51)] text-[14px] text-[rgb(158,158,158)]"
+      >
+        <div class="flex space-x-10">
+          <button
+            class="tab text-gray-600 hover:text-red-500 py-2 px-4"
+            :class="{'border-b-2 border-blue-500 text-blue-500': isActive}"
+            onclick="switchTab(0)"
+          >
+            Store
+          </button>
+          <button
+            class="text-gray-600 hover:text-red-500 py-2 px-4"
+            :class="{'border-b-2 border-blue-500 text-blue-500': isActive}"
+            onclick="switchTab(1)"
+          >
+            Products
+          </button>
+          <button
+            class="text-gray-600 hover:text-red-500 py-2 px-4"
+            :class="{'border-b-2 border-blue-500 text-blue-500': isActive}"
+            onclick="switchTab(2)"
+          >
+            Profile
+          </button>
+        </div>
+        <div
+          class="flex justify-between w-[300px] h-[36px] items-center border border-gray-300 text-black"
+        >
+          <input
+            type="text"
+            placeholder="Search in Store"
+            class="px-2 w-[289px]"
+          />
+          <button class="text-black px-4 cursor-pointer">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mt-1">
+      <img
+        src="https://static-01.daraz.com.np/other/shop/9a8003cb2a0b91f60369fa24af77a1f0.png"
+        alt=""
+        
+      />
+    </div>
+    <!-- products section -->
+    <div class="flex flex-wrap gap-7 flex-wrap bg-white p-14">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/2b508f91d8cc3de8652e9803ab466a51.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/2b508f91d8cc3de8652e9803ab466a51.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/2b508f91d8cc3de8652e9803ab466a51.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/2b508f91d8cc3de8652e9803ab466a51.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/2b508f91d8cc3de8652e9803ab466a51.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>      
+      </div>
+    </div>
+    <!-- coffee section -->
+    <div class="mt-1">
+      <img
+        src="https://static-01.daraz.com.np/other/shop/60cc575e6d94df3fa253e408be48292c.png"
+        alt="cofee banner"
+      />
+    </div>
+    <!-- products section -->
+    <div class="flex items-center gap-7 flex-wrap bg-white p-14">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>      
+      </div>
+    </div>
+    <!-- just for you -->
+    <div class="font-bold text-[25px] bg-gray-100 mt-8 mb-8 ">Just For You</div>
+    <div class="flex items-center gap-6 flex-wrap bg-white p-14">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 shadow-md overflow-hidden bg-white mb-6 cursor-pointer"
+      >
+        <img
+          src="https://img.drz.lazcdn.com/static/np/p/a3b36248209b5e0ae53b159db3017902.png_200x200q90.png_.webp"
+          alt="Product Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">biscuit</h3>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-lg font-bold text-red-400">Rs. 339</span>
+          </div>
+
+          <div class="flex items-center space-x-2 mt-2">
+            <span class="text-sm text-gray-500 line-through">$120.00</span>
+            <span class="text-sm"> 15%</span>
+          </div>
+
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class=""> (35)</span>
+          </div>
+        </div>
+      </div>      
+      </div>
+    </div>
+    <script src="/script.js"></script>
+  </body>
 </html>
